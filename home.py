@@ -3,10 +3,12 @@ import streamlit as st
 from together import Together
 from dotenv import load_dotenv
 
+# Access the API key from secrets
+api_key = st.secrets["TOGETHER_API_KEY"]
 
-Together_API_KEY: st.secrets["TOGETHER_API_KEY"]
+
 # Setup the client using Together API key
-client = Together(api_key=Together_API_KEY)
+client = Together(api_key=api_key)
 
 MODEL_ROLE = 'assistant'  # Correct role for the AI responses
 AI_AVATAR_ICON = '✨'
